@@ -1,0 +1,19 @@
+apply plugin: "java"
+apply plugin: "application"
+
+group "com.mayreh.kafka"
+version "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.apache.kafka:kafka-clients:2.7.0"
+    compileOnly "org.projectlombok:lombok:1.18.16"
+    annotationProcessor "org.projectlombok:lombok:1.18.16"
+}
+
+application {
+    mainClassName "com.mayreh.kafka.demo.DemoMain"
+}

@@ -1,0 +1,7 @@
+.idea
+.gradle
+build
+*.iml
+
+# generated files by IDE
+out/
