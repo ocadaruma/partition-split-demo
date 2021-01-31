@@ -19,6 +19,8 @@ public class ConsumerApp extends Thread implements AutoCloseable {
     public ConsumerApp(Config config) {
         Properties props = new Properties();
         props.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, config.bootstrapServers());
+        props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "demo-consumer");
+        props.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, "demo-consumer");
         props.setProperty(ConsumerConfig.METADATA_MAX_AGE_CONFIG, "30000");
         consumer = new KafkaConsumer<>(props, new StringDeserializer(), new StringDeserializer());
         consumer.subscribe(Collections.singleton(config.topic()));

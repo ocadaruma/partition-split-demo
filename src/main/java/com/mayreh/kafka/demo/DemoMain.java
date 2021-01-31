@@ -9,7 +9,7 @@ public class DemoMain {
         ProducerApp producer = new ProducerApp(config);
 
         consumer.start();
-        Thread.sleep(2000L);
+        Thread.sleep(5000L);
         producer.start();
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {

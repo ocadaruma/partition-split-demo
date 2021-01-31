@@ -26,6 +26,7 @@ public class ProducerApp extends Thread implements AutoCloseable {
         this.config = config;
         Properties props = new Properties();
         props.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, config.bootstrapServers());
+        props.setProperty(ProducerConfig.CLIENT_ID_CONFIG, "demo-producer");
         props.setProperty(ProducerConfig.METADATA_MAX_AGE_CONFIG, "10000");
         producer = new KafkaProducer<>(props, new StringSerializer(), new StringSerializer());
     }
